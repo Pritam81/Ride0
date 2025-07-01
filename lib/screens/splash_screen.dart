@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _controller = AnimationController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
 
@@ -25,7 +25,9 @@ class _SplashScreenState extends State<SplashScreen>
     _controller.forward();
 
     Future.delayed(const Duration(seconds: 4), () {
-     
+      Navigator.pushReplacementNamed(context, '/onboarding');
+      // You can also use Navigator.pushReplacement to navigate to the RegisterScreen directly
+      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RegisterScreen()));
     });
   }
 
