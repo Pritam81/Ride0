@@ -75,9 +75,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       // Proceed to API or next screen
     }
   }
-
   @override
-  
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
