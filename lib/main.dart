@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rideo/screens/auth/forgot_password_screen.dart';
+import 'package:rideo/screens/auth/login_screen.dart';
 import 'package:rideo/screens/auth/register_screen.dart';
 import 'package:rideo/screens/onboarding_screen.dart';
 import 'package:rideo/screens/splash_screen.dart';
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(home: const SplashScreen(), routes: {
       '/register': (context) => const RegisterScreen(),
       '/onboarding': (context) => const OnboardingScreen(),
+      '/login': (context) => const LoginScreen(),
+      '/forgot-password': (context) => const ForgotPasswordScreen(),
     });
   }
 }
