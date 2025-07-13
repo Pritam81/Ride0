@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // TODO: Add Firebase or backend login logic here
 
       // Example navigation
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/homescreen');
     }
   }
 

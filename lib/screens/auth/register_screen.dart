@@ -15,9 +15,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   bool _agree = false;
   bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
 
   void _showTermsDialog() {
     showDialog(
@@ -88,6 +90,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             padding: const EdgeInsets.only(top: 0),
             child: Column(
               children: [
+                SizedBox(height: 25),
                 Center(
                   child: Text(
                     "Create Account",
@@ -126,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 : null,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
 
                 // Email Field
                 Padding(
@@ -152,7 +155,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
 
                 // Password Field with visibility toggle
                 Padding(
@@ -174,6 +177,42 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                         onPressed: () {
                           setState(() => _obscurePassword = !_obscurePassword);
+                        },
+                      ),
+                    ),
+                    validator:
+                        (value) =>
+                            value == null || value.length < 6
+                                ? "Password must be at least 6 characters"
+                                : null,
+                  ),
+                ),
+                const SizedBox(height: 15),
+
+                // Confirm Password Field with visibility toggle
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: TextFormField(
+                    controller: _confirmPasswordController,
+                    obscureText: _obscureConfirmPassword,
+                    decoration: _inputDecoration(
+                      "Confirm Password",
+                      "Enter your Password",
+                      Icons.lock,
+                    ).copyWith(
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscureConfirmPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
+                          color: Colors.grey,
+                        ),
+                        onPressed: () {
+                          setState(
+                            () =>
+                                _obscureConfirmPassword =
+                                    !_obscureConfirmPassword,
+                          );
                         },
                       ),
                     ),
