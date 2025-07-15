@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rideo/screens/home/ActivityTab/activity_screen.dart';
 import 'package:rideo/screens/home/HomeTab/ridenow_screen.dart';
 
 import 'package:rideo/utils/colors.dart';
-import 'package:google_fonts/google_fonts.dart'; 
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         return const Center(child: Text("Services Coming Soon"));
       case 2:
-        return const Center(child: Text("Activity Page"));
+        return ActivityScreen();
       case 3:
         return const Center(child: Text("Profile Page"));
       default:
@@ -41,10 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         Center(
           child: Text(
-            "RideO",
+            "Sarthi",
             style: GoogleFonts.poppins(
               fontSize: 26,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w700,
               color: primaryColor,
             ),
           ),
@@ -53,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         // Sub-tab navigation inside Home
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 0.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: List.generate(_homeTabs.length, (index) {
@@ -62,23 +63,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   setState(() => _homeTabIndex = index);
                 },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 10,
-                  ),
-                  decoration: BoxDecoration(
-                    color: isSelected ? primaryColor : Colors.grey[200],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    _homeTabs[index],
-                    style: TextStyle(
-                      color: isSelected ? Colors.white : Colors.black87,
-                      fontWeight:
-                          isSelected ? FontWeight.bold : FontWeight.normal,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      _homeTabs[index],
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight:
+                            isSelected ? FontWeight.bold : FontWeight.w600,
+                        color: isSelected ? Colors.blue : Colors.grey[600],
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 4), // Gap between text and underline
+                    if (isSelected)
+                      Container(
+                        height: 2.5, // Thickness of underline
+                        width: 85, // Length of underline
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                      ),
+                  ],
                 ),
               );
             }),
@@ -87,13 +94,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
         const SizedBox(height: 15),
 
-        // Placeholder content based on selected home tab
+        // Content based on selected home tab
         if (_homeTabIndex == 0) ...[
           Expanded(child: RidenowScreen()),
         ] else if (_homeTabIndex == 1) ...[
-          const Center(child: Text("Ride Later Content")),
+          const Expanded(child: Center(child: Text("Ride Later Content"))),
         ] else if (_homeTabIndex == 2) ...[
-          const Center(child: Text("Post a Job Content")),
+          const Expanded(child: Center(child: Text("Post a Job Content"))),
         ],
       ],
     );
