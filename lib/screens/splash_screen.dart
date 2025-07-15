@@ -58,7 +58,7 @@ class _SplashScreenState extends State<SplashScreen>
               ),
 
               const Text(
-                "RideO",
+                "Sarthi",
                 style: TextStyle(
                   fontSize: 40,
                   color: Colors.white,
