@@ -39,6 +39,7 @@ class RidenowScreen extends StatelessWidget {
             // ),
 
             // Main Card Container
+            SizedBox(height: 8),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
               decoration: BoxDecoration(
