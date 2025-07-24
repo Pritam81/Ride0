@@ -26,7 +26,7 @@ class OnboardingScreen extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // App Logo
+                   
                     Image.asset(
                       'assets/images/applogowithnobg.png',
                       height: 100,
