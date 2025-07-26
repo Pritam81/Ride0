@@ -9,7 +9,7 @@ import 'package:rideo/screens/onboarding_screen.dart';
 import 'package:rideo/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
