@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rideo/screens/home/ActivityTab/activity_screen.dart';
+import 'package:rideo/screens/home/HomeTab/postajob_screen.dart';
+import 'package:rideo/screens/home/HomeTab/ridelater_screen.dart';
 import 'package:rideo/screens/home/HomeTab/ridenow_screen.dart';
 
 import 'package:rideo/utils/colors.dart';
@@ -98,9 +100,9 @@ class _HomeScreenState extends State<HomeScreen> {
         if (_homeTabIndex == 0) ...[
           Expanded(child: RidenowScreen()),
         ] else if (_homeTabIndex == 1) ...[
-          const Expanded(child: Center(child: Text("Ride Later Content"))),
+          Expanded(child: RideLaterScreen()),
         ] else if (_homeTabIndex == 2) ...[
-          const Expanded(child: Center(child: Text("Post a Job Content"))),
+          Expanded(child: PostajobScreen()),
         ],
       ],
     );
