@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:rideo/screens/home/ActivityTab/current_drives_screen.dart';
 import 'package:rideo/screens/home/ActivityTab/job_history_screen.dart';
 import 'package:rideo/screens/home/ActivityTab/past_driver_screen.dart';
