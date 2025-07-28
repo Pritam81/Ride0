@@ -15,7 +15,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +26,8 @@ class MyApp extends StatelessWidget {
         '/forgot-password': (context) => const ForgotPasswordScreen(),
         '/homescreen': (context) => const HomeScreen(),
         '/past-driver-profile': (context) => const PastDriverProfileScreen(),
-        '/current-driver-details': (context) => const CurrentDriverDetailsScreen(),
+        '/current-driver-details':
+            (context) => const CurrentDriverDetailsScreen(),
       },
     );
   }
