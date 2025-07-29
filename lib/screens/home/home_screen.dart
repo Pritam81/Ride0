@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ] else if (_homeTabIndex == 1) ...[
           Expanded(child: RideLaterScreen()),
         ] else if (_homeTabIndex == 2) ...[
-          Expanded(child: PostajobScreen()),
+          Expanded(child: PostJobScreen()),
         ],
       ],
     );
