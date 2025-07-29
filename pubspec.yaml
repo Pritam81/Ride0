@@ -37,7 +37,8 @@ dependencies:
   google_fonts: ^6.1.0
   font_awesome_flutter: ^10.5.0
   get: ^4.7.2
-  
+  intl: ^0.18.1
+  permission_handler: ^11.0.0  
 
 dev_dependencies:
   flutter_test:
